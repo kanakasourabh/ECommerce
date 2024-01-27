@@ -32,7 +32,7 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <Link to="/" className="navbar-brand">
-              🛍️ Shopping BAsket
+              🛍️ Shopping Basket
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
@@ -73,7 +73,7 @@ const Header = () => {
                       <li>
                         <NavLink
                           to={`/dashboard/${
-                            auth?.user?.role === 1 ? "admin" : "user"
+                            auth?.user?.user?.role === 1 ? "admin" : "user"
                           }`}
                           className="dropdown-item"
                         >
