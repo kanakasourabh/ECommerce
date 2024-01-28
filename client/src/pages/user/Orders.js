@@ -22,6 +22,7 @@ const Orders = () => {
   useEffect(() => {
     if (auth?.token) getOrders();
   }, [auth?.token]);
+
   return (
     <Layout title={"Your Orders"}>
       <div className="container-fluid p-3 m-3">
@@ -38,24 +39,24 @@ const Orders = () => {
                     <table className="table">
                       <thead>
                         <tr>
-                          <td scope="col">#</td>
-                          <td scope="col">Status</td>
-                          <td scope="col">Buyer</td>
-                          <td scope="col">Date</td>
-                          <td scope="col">Payment</td>
-                          <td scope="col">Quantity</td>
+                          <th scope="col">#</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Buyer</th>
+                          <th scope="col">Date</th>
+                          <th scope="col">Payment</th>
+                          <th scope="col">Quantity</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <th scope="row">{i + 1}</th>
-                          <th scope="row">{o?.status}</th>
-                          <th scope="row">{o?.buyer?.name}</th>
-                          <th scope="row">{moment(o?.createdAt).fromNow()}</th>
-                          <th scope="row">
+                          <td scope="row">{i + 1}</td>
+                          <td scope="row">{o?.status}</td>
+                          <td scope="row">{o?.buyer?.name}</td>
+                          <td scope="row">{moment(o?.createdAt).fromNow()}</td>
+                          <td scope="row">
                             {o?.payment.success ? "Success" : " Failed"}
-                          </th>
-                          <th scope="row">{o?.products?.length}</th>
+                          </td>
+                          <td scope="row">{o?.products?.length}</td>
                           {/* <th>{o?.}</th> */}
                         </tr>
                       </tbody>

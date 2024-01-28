@@ -41,8 +41,8 @@ const Login = () => {
   return (
     <Layout>
       <div className="form-container">
-        <h1>Login Page</h1>
         <form onSubmit={handleSubmit}>
+          <h1>Login Page</h1>
           <div className="mb-3">
             <input
               type="email"
