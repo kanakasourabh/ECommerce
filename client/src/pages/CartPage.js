@@ -90,49 +90,76 @@ const CartPage = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h1 className="text-center bg-light p-2 mb-1">
-              {`Hello ${auth?.token && auth?.user?.user?.name}`}
-            </h1>
-            <h4 className="text-center">
+            <h4 className="bg-light p-2 mb-1 mt-4 --text-color-black">
+              <span class="your-cart">YOUR CART</span>
+              {/* {`Hello ${auth?.token && auth?.user?.user?.name}`} */}
+            </h4>
+            {/* <h4 className="text-center">
               {cart?.length > 0
                 ? `You have ${cart.length} items in your cart ${
                     auth?.token ? "" : "Please login to checkout"
                   }`
                 : " Your cart is Empty"}
-            </h4>
+            </h4> */}
           </div>
         </div>
         <div className="row">
           <div className="col-md-8">
+            <div>
+              <button class="apply-coupon-button" fdprocessedid="3p1ph">
+                <div class="apply-coupen-symbol-whitetheme">%</div>
+                <span class="Apply-coupon">Apply Coupon </span>
+              </button>
+            </div>
             {cart &&
               cart?.map((p) => (
-                <div className="row m-2 p-3 card flex-row">
-                  <div className="col-md-8 " style={{ width: "18rem" }}>
+                <div className="row   card flex-row">
+                  <div className="col-md-5 " style={{ width: "18rem" }}>
                     <img
                       src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
                       alt={p.name}
                     />
                   </div>
-                  <div className="col-md-4">
+                  <div className="col-md-4 flex-column">
                     <h4>{p.name}</h4>
                     <p> {p.description.substring(0, 30)}...</p>
-                    <h4>Price: {p.price}</h4>
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => removeCartItem(p._id)}
-                    >
-                      Remove
-                    </button>
+                    <div>⭐⭐⭐⭐⭐</div>
+                    <p>
+                      Standard Delivery by <br />
+                      within 5 days | <br /> free
+                    </p>
+
+                    <div className="flex flex-wrap ">
+                      <button
+                        className="btn btn-secondary"
+                        onClick={() => removeCartItem(p._id)}
+                      >
+                        Move to wishList
+                      </button>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => removeCartItem(p._id)}
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                  <div className="col-md-3 flex-column">
+                    <h5 className="text-sm-end fw-bold">₹ {p.price}.00</h5>
+                    <p className="text-end">(Incl. all Taxes)</p>
+                    <hr />
                   </div>
                 </div>
               ))}
           </div>
           <div className="col-md-4 text-center">
-            <h2>Cart Summary</h2>
-            <p>Total | Checkout | Payment</p>
+            {/* <h2>Cart Summary</h2> */}
+            {/* <p>Total | Checkout | Payment</p> */}
+            <p>Order Summary ( {cart?.length} item )</p>
             <hr />
-            <h4>Total: {totalPrice()}</h4>
+            <h6>Original Price: {totalPrice()}</h6>
+            <h6>Total Price: {totalPrice()}</h6>
             {auth?.user?.user?.address ? (
               <>
                 <div className="mb-3">

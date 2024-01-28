@@ -50,14 +50,11 @@ const Orders = () => {
                       <tbody>
                         <tr>
                           <td scope="row">{i + 1}</td>
-                          <td scope="row">{o?.status}</td>
-                          <td scope="row">{o?.buyer?.name}</td>
-                          <td scope="row">{moment(o?.createdAt).fromNow()}</td>
-                          <td scope="row">
-                            {o?.payment.success ? "Success" : " Failed"}
-                          </td>
-                          <td scope="row">{o?.products?.length}</td>
-                          {/* <th>{o?.}</th> */}
+                          <td>{o?.status}</td>
+                          <td>{o?.buyer?.name}</td>
+                          <td>{moment(o?.createdAt).fromNow()}</td>
+                          <td>{o?.payment.success ? "Success" : " Failed"}</td>
+                          <td>{o?.products?.length}</td>
                         </tr>
                       </tbody>
                     </table>
