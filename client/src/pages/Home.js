@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
-import { Checkbox, Radio } from "antd";
+import { Carousel, Checkbox, Radio } from "antd";
 import { Prices } from "./Prices";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useCart } from "../context/Cart";
 import toast from "react-hot-toast";
 import { AiOutlineReload } from "react-icons/ai";
 import "../styles/homePage.css";
+import useCategory from "../hooks/useCategory";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
+  // const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
   const [total, setTotal] = useState(0);
@@ -20,24 +21,27 @@ const Home = () => {
   const [cart, setCart] = useCart();
   const navigate = useNavigate();
 
+  const categories = useCategory();
+  // categories && setCategories(category);
+
   //get all category
 
-  const getAllCategory = async () => {
-    try {
-      const { data } = await axios.get(
-        `${process.env.REACT_APP_API}/api/v1/category/get-category`
-      );
+  // const getAllCategory = async () => {
+  //   try {
+  //     const { data } = await axios.get(
+  //       `${process.env.REACT_APP_API}/api/v1/category/get-category`
+  //     );
 
-      if (data?.success) {
-        setCategories(data?.categories);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //     if (data?.success) {
+  //       setCategories(data?.categories);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   useEffect(() => {
-    getAllCategory();
+    // getAllCategory();
     getTotal();
   }, []);
 
@@ -125,20 +129,19 @@ const Home = () => {
       console.log(error);
     }
   };
-
+  // src = "/photos/shopping-bag-cart.jpg";
   return (
     <Layout title={"All Products -Best offers"}>
-      <div className="m-2">
+      <div className="position-relative ">
         <img
-          src="/photos/sale.jpg"
-          className="banner-img"
+          src="/photos/banerr.jpg"
+          // className="banner-img p-2"
+          className="rounded float-start p-2"
           alt="bannerimage"
           width={"100%"}
-          height={"300px"}
-          p-2
-          onClick={() => navigate("/categories")}
         />
       </div>
+
       <div className="container-fluid row mt-3 home-page">
         <div className="col-md-3 filters">
           <h4 className="text-center">Filter by Category</h4>

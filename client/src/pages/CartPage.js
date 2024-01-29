@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import DropIn from "braintree-web-drop-in-react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import "../styles/CartStyle.css";
 
 const CartPage = () => {
   const [cart, setCart] = useCart();
@@ -213,9 +214,7 @@ const CartPage = () => {
                   <button
                     className="btn btn-primary"
                     onClick={handlePayment}
-                    disabled={
-                      loading || !instance || !auth?.user?.user?.address
-                    }
+                    disabled={loading || !instance || !auth?.user?.address}
                   >
                     {loading ? "Processing ....." : "Make Payment"}
                   </button>
