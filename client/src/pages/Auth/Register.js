@@ -101,6 +101,9 @@ const Register = () => {
           <button type="submit" className="btn btn-primary">
             Register
           </button>
+          <p className="btn-reg" onClick={() => navigate("/Login")}>
+            Already registered? Please Login
+          </p>
         </form>
       </div>
     </Layout>

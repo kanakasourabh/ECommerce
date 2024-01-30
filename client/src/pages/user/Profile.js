@@ -4,6 +4,7 @@ import UserManu from "../../components/Layout/UserMenu";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import axios from "axios";
+// import "../../styles/Profile.css";
 
 const Profile = () => {
   const [auth, setAuth] = useAuth();
@@ -47,16 +48,16 @@ const Profile = () => {
 
   return (
     <Layout title={"Your Profile"}>
-      <div className="container-fluid p-3 m-3">
+      <div className="container-fluid mt-4">
         <div className="row">
           <div className="col-md-3">
             <UserManu />
           </div>
           <div className="col-md-9">
-            <div className="form-container">
+            <div className="form-container ">
               <form onSubmit={handleSubmit}>
                 <h4 className="title">USER PROFILE</h4>
-                <div className="mb-3">
+                <div className="mb-3 ">
                   <input
                     type="text"
                     className="form-control"
@@ -74,7 +75,6 @@ const Profile = () => {
                     placeholder="Enter your Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                   
                     disabled
                   />
                 </div>

@@ -120,3 +120,36 @@
 /* .banner-img {
   margin-top: 60px;
 } */
+
+.no-orders-container {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.no-orders-container h2 {
+  color: #333;
+}
+
+.no-orders-container p {
+  color: #777;
+}
+
+.act-btn .btn {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  padding: 1.4rem 5rem;
+  font-weight: 700;
+}
+
+.btn.btn-default {
+  min-width: 8.5rem;
+  background: #12daa8;
+  color: #103749;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #12daa8;
+}

@@ -78,7 +78,10 @@ const Login = () => {
           <button type="submit" className="btn btn-primary">
             Login
           </button>
-          <p>not registered yet? Please register</p>
+
+          <p className="btn-reg" onClick={() => navigate("/Register")}>
+            not registered yet? Please register
+          </p>
         </form>
       </div>
     </Layout>

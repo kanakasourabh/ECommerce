@@ -171,7 +171,7 @@ const UpdateProduct = () => {
                     />
                   </div>
                 )}
-              </div>
+              </div> 
               <div className="mb-3">
                 <input
                   type="text"

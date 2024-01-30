@@ -4,10 +4,12 @@ import UserManu from "../../components/Layout/UserMenu";
 import axios from "axios";
 import { useAuth } from "../../context/auth";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
   const [auth] = useAuth();
+  const navigate = useNavigate();
   const getOrders = async () => {
     try {
       const { data } = await axios.get(
@@ -31,8 +33,8 @@ const Orders = () => {
             <UserManu />
           </div>
           <div className="col-md-9">
-            <h1 className="text-center">All Order</h1>
-            {orders &&
+            <h1 className="text-center">My Order</h1>
+            {orders.length > 0 ? (
               orders?.map((o, i) => {
                 return (
                   <div className="border shadow">
@@ -85,7 +87,29 @@ const Orders = () => {
                     </div>
                   </div>
                 );
-              })}
+              })
+            ) : (
+              <div className="no-orders-container">
+                <img
+                  src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/f_auto,q_auto,d_Croma%20Assets:No_image.png/Croma%20Assets/UI%20Assets/sshz69afrixwivcsgnpx.svg"
+                  alt="empty image"
+                  title="empty image"
+                />
+
+                <h2>No Orders Found</h2>
+                <p>There are currently no orders to display.</p>
+                <div className="act-btn">
+                  <button
+                    className="btn btn-default"
+                    type="button"
+                    fdprocessedid="px9kbn"
+                    onClick={() => navigate("/")}
+                  >
+                    Continue Shopping
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
