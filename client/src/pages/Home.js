@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
-import { Carousel, Checkbox, Radio } from "antd";
+import { Checkbox, Radio } from "antd";
 import { Prices } from "./Prices";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/Cart";
 import toast from "react-hot-toast";
 import { AiOutlineReload } from "react-icons/ai";
