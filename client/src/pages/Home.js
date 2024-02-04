@@ -128,16 +128,15 @@ const Home = () => {
       console.log(error);
     }
   };
-  // src = "/photos/shopping-bag-cart.jpg";
   return (
     <Layout title={"All Products -Best offers"}>
       <div className="position-relative ">
         <img
-          src="/photos/banerr.jpg"
-          // className="banner-img p-2"
+          src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/739ed527dbf977fe.jpg?q=20"
           className="rounded float-start p-2"
           alt="bannerimage"
           width={"100%"}
+          height={"300px"}
         />
       </div>
 
@@ -155,7 +154,7 @@ const Home = () => {
                   key={c._id}
                   onChange={(e) => handleFilter(e.target.checked, c._id)}
                 >
-                  {c.name}
+                {c.name}
                 </Checkbox>
               ))}
             </div>

@@ -105,3 +105,14 @@
     height: 200px !important; /* Adjusted height for smaller screens */
   }
 }
+
+.vertical-banner-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-banner-container img {
+  width: 100%;
+  height: auto;
+}

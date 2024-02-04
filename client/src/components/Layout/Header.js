@@ -11,6 +11,7 @@ const Header = () => {
   const [auth, setAuth] = useAuth();
   const [cart, setCart] = useCart();
   const categories = useCategory();
+  console.log(auth);
 
   const handleLogout = () => {
     setAuth({
@@ -56,11 +57,6 @@ const Header = () => {
                   Categories
                 </Link>
                 <ul className="dropdown-menu">
-                  {/* <li>
-                    <Link to={"/categories"} className="dropdown-item" href="#">
-                      All Categories
-                    </Link>
-                  </li> */}
                   {categories &&
                     categories?.map((c) => (
                       <li key={c.id}>
@@ -104,7 +100,9 @@ const Header = () => {
                       <li>
                         <NavLink
                           to={`/dashboard/${
-                            auth?.user?.user?.role === 1 ? "admin" : "user"
+                            auth?.user?.user?.role || auth?.user?.role === 1
+                              ? "admin"
+                              : "user"
                           }`}
                           className="dropdown-item"
                         >
@@ -120,6 +118,13 @@ const Header = () => {
                           LogOut
                         </NavLink>
                       </li>
+                      {(auth?.user?.user?.role || auth?.user?.role !== 1) && (
+                        <li className="nav-item">
+                          <NavLink to="/Seller-page" className="dropdown-item">
+                            <p className="text-small">Want to be Seller?</p>
+                          </NavLink>
+                        </li>
+                      )}
                     </ul>
                   </li>
                 </>
