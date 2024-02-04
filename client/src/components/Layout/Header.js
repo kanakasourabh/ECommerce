@@ -48,6 +48,18 @@ const Header = () => {
                   Home
                 </NavLink>
               </li> */}
+              {(auth?.user?.user?.role || auth?.user?.role !== 1) && (
+                <li className="nav-item">
+                  <NavLink
+                    to="dashboard/want-to-be-seller"
+                    className="dropdown-item"
+                  >
+                    <p className="dropdown-item pt-2 mx-2">
+                      Want to be Seller?
+                    </p>
+                  </NavLink>
+                </li>
+              )}
               <li className="nav-item dropdown">
                 <Link
                   to={"/categories"}
@@ -118,13 +130,6 @@ const Header = () => {
                           LogOut
                         </NavLink>
                       </li>
-                      {(auth?.user?.user?.role || auth?.user?.role !== 1) && (
-                        <li className="nav-item">
-                          <NavLink to="/Seller-page" className="dropdown-item">
-                            <p className="text-small">Want to be Seller?</p>
-                          </NavLink>
-                        </li>
-                      )}
                     </ul>
                   </li>
                 </>
