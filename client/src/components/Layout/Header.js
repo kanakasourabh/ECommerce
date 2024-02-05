@@ -11,7 +11,7 @@ const Header = () => {
   const [auth, setAuth] = useAuth();
   const [cart, setCart] = useCart();
   const categories = useCategory();
-  console.log(auth);
+  // console.log(auth);
 
   const handleLogout = () => {
     setAuth({
@@ -50,10 +50,7 @@ const Header = () => {
               </li> */}
               {(auth?.user?.user?.role || auth?.user?.role !== 1) && (
                 <li className="nav-item">
-                  <NavLink
-                    to="dashboard/want-to-be-seller"
-                    className="dropdown-item"
-                  >
+                  <NavLink to="/want-to-be-seller" className="dropdown-item">
                     <p className="dropdown-item pt-2 mx-2">
                       Want to be Seller?
                     </p>

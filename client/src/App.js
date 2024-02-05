@@ -34,13 +34,13 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/category/:slug" element={<CategoryProduct />} />
-
         <Route path="/search" element={<Search />} />
+        <Route path="/want-to-be-seller" element={<BeSeller />} />
+
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />
           <Route path="user/orders" element={<Orders />} />
           <Route path="user/profile" element={<Profile />} />
-          <Route path="want-to-be-seller" element={<BeSeller />} />
         </Route>
 
         <Route path="/dashboard" element={<AdminRoute />}>

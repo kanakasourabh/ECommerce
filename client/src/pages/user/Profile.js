@@ -21,7 +21,6 @@ const Profile = () => {
     setEmail(email);
     setAddress(address);
   }, [auth?.user || auth?.user?.user]);
-  console.log(auth?.user);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

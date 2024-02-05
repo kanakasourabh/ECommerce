@@ -154,7 +154,7 @@ const Home = () => {
                   key={c._id}
                   onChange={(e) => handleFilter(e.target.checked, c._id)}
                 >
-                {c.name}
+                  {c.name}
                 </Checkbox>
               ))}
             </div>
