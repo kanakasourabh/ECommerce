@@ -21,6 +21,7 @@ const BeSeller = () => {
         toast.success(res.data.message);
 
         navigate("/");
+        toast.success("Please logout and Login again");
       } else {
         toast.error(res.data.message);
       }
@@ -44,7 +45,7 @@ const BeSeller = () => {
         </div>
         <img
           src="https://static-assets-web.flixcart.com/fk-sp-static/images/prelogin/banner/Desktop_sell.webp"
-          alt
+          alt="banner"
           height
           width
           loading="lazy"

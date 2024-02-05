@@ -255,3 +255,30 @@ export const orderStatusController = async (req, res) => {
     });
   }
 };
+
+export const SellerContoller = async (req, res) => {
+  try {
+    const { email, radio } = req.body;
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).send({
+        success: false,
+        message: "Wrong email or answer",
+      });
+    }
+
+    await User.findByIdAndUpdate(user._id, { role: radio });
+    res.status(200).send({
+      success: true,
+      message: "You are admin now",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "error while making a user as admin",
+      error,
+    });
+  }
+};

@@ -109,7 +109,7 @@ const Header = () => {
                       <li>
                         <NavLink
                           to={`/dashboard/${
-                            auth?.user?.user?.role || auth?.user?.role === 1
+                            (auth?.user?.user?.role || auth?.user?.role) === 1
                               ? "admin"
                               : "user"
                           }`}

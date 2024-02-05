@@ -3,6 +3,7 @@ import Layout from "../components/Layout/Layout";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import "../styles/CategoryProductStyle.css";
+import Shimmer from "../components/Shimmer";
 
 const CategoryProduct = () => {
   const [products, setProducts] = useState([]);
@@ -32,7 +33,9 @@ const CategoryProduct = () => {
         <h6 className="text-center"> {products?.length} result Found</h6>
         <div className="row">
           <div className="d-flex flex-wrap">
-            {products &&
+            {!products ? (
+              <Shimmer />
+            ) : (
               products?.map((p) => (
                 <div
                   className="card m-2"
@@ -63,7 +66,8 @@ const CategoryProduct = () => {
                     </div>
                   </div>
                 </div>
-              ))}
+              ))
+            )}
           </div>
           {/* <div className="m-2 p-3">
             {products && products.length < total && (

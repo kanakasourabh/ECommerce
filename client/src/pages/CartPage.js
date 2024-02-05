@@ -8,6 +8,7 @@ import DropIn from "braintree-web-drop-in-react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import "../styles/CartStyle.css";
+import CartShimmer from "../components/CartShimmer";
 
 const CartPage = () => {
   const [cart, setCart] = useCart();
@@ -112,7 +113,9 @@ const CartPage = () => {
                 <span class="Apply-coupon">Apply Coupon </span>
               </button>
             </div>
-            {cart &&
+            {cart.length < 1 ? (
+              <CartShimmer />
+            ) : (
               cart?.map((p) => (
                 <div className="row   card flex-row">
                   <div className="col-md-5 " style={{ width: "18rem" }}>
@@ -152,7 +155,8 @@ const CartPage = () => {
                     <hr />
                   </div>
                 </div>
-              ))}
+              ))
+            )}
           </div>
           <div className="col-md-4 text-center">
             {/* <h2>Cart Summary</h2> */}
