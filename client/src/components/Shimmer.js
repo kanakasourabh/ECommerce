@@ -11,11 +11,11 @@ const Shimmer = () => {
           <div className="shimmer"></div>
         </div>
         {/* Other product card content goes here */}
-        <div className="product-details">
+        {/* <div className="product-details">
           <h2>Product Name</h2>
           <p>Description goes here.</p>
           <span>$19.99</span>
-        </div>
+        </div> */}
       </div>
     </div>
   ));

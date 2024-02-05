@@ -33,7 +33,7 @@ const CategoryProduct = () => {
         <h6 className="text-center"> {products?.length} result Found</h6>
         <div className="row">
           <div className="d-flex flex-wrap">
-            {!products ? (
+            {products.length < 1 ? (
               <Shimmer />
             ) : (
               products?.map((p) => (
